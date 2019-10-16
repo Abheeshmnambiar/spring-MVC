@@ -1,0 +1,52 @@
+
+package com.merchant.rsponseModel;
+
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
+public class Category2 {
+
+    @JsonProperty("classification")
+    private String classification;
+    @JsonProperty("logo_url")
+    private Object logoUrl;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    @JsonProperty("classification")
+    public String getClassification() {
+        return classification;
+    }
+
+    @JsonProperty("classification")
+    public void setClassification(String classification) {
+        this.classification = classification;
+    }
+
+    @JsonProperty("logo_url")
+    public Object getLogoUrl() {
+        return logoUrl;
+    }
+
+    @JsonProperty("logo_url")
+    public void setLogoUrl(Object logoUrl) {
+        this.logoUrl = logoUrl;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
+}
